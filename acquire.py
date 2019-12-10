@@ -3,9 +3,22 @@ from selenium.webdriver.firefox.options import Options
 import requests
 from bs4 import BeautifulSoup as bs
 import re
+
+def get_news_articles():
+    filename = 'inshorts_news_articles.csv'
+
+    # check for presence of the file or make a new request
+    if os.path.exists(filename):
+        return pd.read_csv(filename)
+    else:
+        return make_new_request()
+
 def acquire():
+    # request webpage
     url = requests.get(html)
+    headers = {'user-agent': ''}
     return bs(url.content, 'html.parser')
+
 def webcrawler(soup, html = 'https://github.com/trending'):
     index = {'languages' : [], 'links' : [], 'read_link'}
     title = soup.findAll("span", itemprop="programmingLanguage")
