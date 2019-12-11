@@ -94,13 +94,12 @@ def remove_stopwords(tokenized_string, extra_words=[], exclude_words=[]):
     final_string = " ".join(filtered_words)
     return final_string
 
-def prep_target(df, 'target'):
+def prep_target(df, col = 'target'):
     """
     insert dataframe 
-    
+
     """
     # df = pd.read_csv('hola.csv')
-
     df = basic_clean(df)
     #df[col] = df[col].apply(', '.join)
     df = df.assign(original = df[col])
