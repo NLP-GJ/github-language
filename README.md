@@ -9,7 +9,7 @@ One or two google slides suitable for a general audience that summarize our find
 
 **Data Science Skills Used**
 
-Webscrape - beautifulsoup
+Webscrape - beautifulsoup & selenium
 Data prep and cleaning
 > regex, tokenize, stemming & lemmatization, remove stopwords, etc.
 
@@ -24,8 +24,8 @@ github (.csv)
 
 Multiple .py files to run model and reproduce the report
 
-acquire.py, summarize.py, prep.py, model.py
+acquire.py, prepare.py
 
-Run through .ipynb
+Run through Report.ipynb
 
 Random states are set as 123 in the notebook
