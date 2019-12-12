@@ -81,6 +81,7 @@ def tokenize(string):
     return tokenizer.tokenize(string, return_str=True)
 
 def remove_stopwords(tokenized_string, extra_words=[], exclude_words=[]):
+    
     words = tokenized_string.split()
     stopword_list = stopwords.words('english')
 
@@ -94,13 +95,14 @@ def remove_stopwords(tokenized_string, extra_words=[], exclude_words=[]):
     final_string = " ".join(filtered_words)
     return final_string
 
-def prep_target(df, col = 'target'):
+def prep_target(df, col):
     """
     insert dataframe 
 
     """
     # df = pd.read_csv('hola.csv')
     df = basic_clean(df)
+    #extra_words = 
     #df[col] = df[col].apply(', '.join)
     df = df.assign(original = df[col])
     #df = df['original'].apply(', '.join)
